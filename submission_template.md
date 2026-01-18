@@ -59,7 +59,7 @@ See `correct_task1.py`
 
 ---
 
-# Task 2 — Count Valid Emails
+# Task 2: Count Valid Emails
 
 ## 1) Code Review Findings
 ### Critical bugs
