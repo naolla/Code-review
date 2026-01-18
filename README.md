@@ -1,84 +1,62 @@
 # AI Code Review Assignment – Eskalate
 
-This repository contains the **AI Code Review Assignment** for candidates applying to the **AI Training Software Engineer** role at **Eskalate**.
+This repository contains my completed submission for the **AI Code Review Assignment** for the **AI Training Software Engineer** role at **Eskalate**.
 
-You should **clone this repository**, complete the tasks locally, and then push your work to **your own public GitHub repository** for submission.
+The goal of this assignment was to review AI-generated Python code, identify correctness issues and edge cases, apply safe and minimal fixes, and rewrite explanations so they accurately reflect the final behavior.
 
 ---
 
-## How to Use This Repository
+## Repository Overview
 
-### Step 1: Clone the Repository
+This repository follows the required structure exactly and includes:
 
-Clone this repository to your local machine:
+- `task1.py`, `task2.py`, `task3.py`  
+  Original AI-generated code (unchanged, as instructed)
 
-```bash
-git clone https://github.com/MoeYasir/ai-code-review-assignment-template
-```
-### Step 2: Create Your Own Public Repository
-Create a new public GitHub repository under your own account.
+- `correct_task1.py`, `correct_task2.py`, `correct_task3.py`  
+  Corrected implementations with minimal, safe fixes
 
-You will push your completed work to that repository.
+- `submission_template.md`  
+  Complete written review for all three tasks, including:
+  - Code review findings
+  - Proposed fixes
+  - Explanation rewrites
+  - Final engineering judgments
 
-### Step 3: Complete the Assignment
-In this repository, you will find:
+---
 
-- task1.py
+## Work Completed
 
-- task2.py
+For each task, I have:
 
-- task3.py
+- Identified logical bugs, edge cases, and incorrect assumptions
+- Fixed the code while keeping the structure close to the original
+- Avoided unnecessary refactoring or over-optimization
+- Ensured safe behavior (no division by zero, no crashes on bad input)
+- Rewritten explanations so they match the actual code behavior
+- Provided clear engineering judgments (approve / request changes / reject)
 
-- submission_template.md (your written submission)
+All fixes prioritize **correctness, clarity, and maintainability**.
 
-#### Do **not** modify `task1.py`, `task2.py`, or `task3.py`
-- Place your corrected implementations in:
-  - `correct_task1.py`
-  - `correct_task2.py`
-  - `correct_task3.py`
+---
 
+## Important Notes
 
-#### Your work involves:
+- The original task files were **not modified**, per the assignment rules.
+- All required files are present and finalized.
+- This repository is **public** and ready for review.
+- No changes will be made after submission.
 
-- Reviewing and fixing the Python code in each task file
+---
 
-- Completing all required sections in submission_template.md
+## Submission
 
-- Rewriting the AI-generated explanations so they match the final behavior
-
-- Follow the instructions provided in the assignment document carefully.
-
-### Step 4: Push to Your Own Repository
-Once complete:
-
-- Push your changes to your own public repository
-- Once your repository is ready, submit the link to your **public GitHub repository** using the form below:
+This repository was submitted via the official Eskalate submission form:
 
 **Assignment Submission Form:**  
 https://forms.gle/rDbg7LghgyTcWR2v5
 
-#### Verify that:
+---
 
-- The repository is public
-
-- All required files are present
-
-- submission_template.md is fully filled out and renders correctly on GitHub
-
-### Step 5: Submit the Repository Link
-Submit the link to your public repository using the Google Form provided in the assignment document.
-
-#### Important Rules
-- Do not submit pull requests to this repository
-
-- Do not fork this repository
-
-- Do not submit ZIP files or screenshots
-
-- Only submissions in your own public GitHub repository will be reviewed
-
-- Repositories modified after the submission deadline may be disqualified
-
-
-### Good luck, and thank you for your interest in Eskalate.
-
+Thank you for reviewing my submission.  
+I appreciate the opportunity to demonstrate my approach to code review, reasoning, and practical engineering judgment.
