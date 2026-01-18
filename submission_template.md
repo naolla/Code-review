@@ -6,7 +6,7 @@
 
 ---
 
-# Task 1 — Average Order Value
+# Task 1:  Average Order Value
 
 ## 1) Code Review Findings
 ### Critical bugs
@@ -39,7 +39,7 @@ See `correct_task1.py`
 - Empty list input.
 - All orders cancelled.
 - Mixed cancelled and non-cancelled orders.
-- Orders with missing or malformed fields.
+
 
 ## 3) Explanation Review & Rewrite
 ### AI-generated explanation (original)
@@ -63,22 +63,23 @@ See `correct_task1.py`
 
 ## 1) Code Review Findings
 ### Critical bugs
-- Any string containing `@` is treated as a valid email, which is incorrect.
+- Any string containing `@` is treated as a valid email, which leads to many false positives.
 
 ### Edge cases & risks
-- `None` or non-string values raise errors.
-- Strings like `"@"`, `"test@"`, or `"@test"` are incorrectly counted.
-- Whitespace-only strings are not handled.
+- Non-string inputs (e.g., `None`, numbers) are not handled safely.
+- Strings like `"@"`, `"test@"`, or `"@test"` are incorrectly counted as valid.
+- No validation of domain or top-level domain structure.
 
 ### Code quality / design issues
-- Validation logic is overly simplistic.
-- Explanation overstates correctness.
+- Email validation logic is overly simplistic.
+- The explanation claims correctness that the implementation does not provide.
 
 ## 2) Proposed Fixes / Improvements
 ### Summary of changes
-- Validate input type.
-- Require exactly one `@` with content on both sides.
-- Use a generator expression for clarity and efficiency.
+- Validate that each input is a string.
+- Use a regular expression to check for a basic email structure (`username@domain.tld`).
+- Use `re.fullmatch` to ensure the entire string matches the pattern.
+- Keep the overall structure close to the original implementation.
 
 ### Corrected code
 See `correct_task2.py`
@@ -86,30 +87,30 @@ See `correct_task2.py`
 > Note: The original AI-generated code is preserved in `task2.py`.
 
 ### Testing Considerations
-- Empty list.
-- Mixed valid and invalid emails.
-- Non-string inputs.
-- Edge cases like missing username or domain.
+- Empty input list.
+- Valid emails with different domains and TLD lengths.
+- Clearly invalid emails (missing username, domain, or TLD).
+- Non-string inputs such as `None` or integers.
 
 ## 3) Explanation Review & Rewrite
 ### AI-generated explanation (original)
 > This function counts the number of valid email addresses in the input list. It safely ignores invalid entries and handles empty input correctly.
 
 ### Issues in original explanation
-- Claims full validity when only a basic check exists.
-- Does not mention handling of non-string inputs.
+- Overstates correctness of email validation.
+- Does not clarify what “valid” means.
+- Omits behavior for non-string inputs.
 
 ### Rewritten explanation
-- This function counts email-like strings using a simple structural check: exactly one `@` with text on both sides. It safely ignores non-string and clearly invalid entries and works correctly on empty input.
+- This function counts email addresses that match a basic regular-expression pattern for common email formats. It ignores non-string values and emails that do not fully match the expected structure. The function safely returns zero for empty input.
 
 ## 4) Final Judgment
 - Decision: Request Changes
-- Justification: Validation logic does not match the explanation.
-- Confidence & unknowns: Medium confidence; stricter validation depends on requirements.
+- Justification: The original implementation performs incorrect validation and does not match its explanation.
+- Confidence & unknowns: High confidence in the fix; the regex intentionally avoids full RFC-level validation.
 
----
 
-# Task 3 — Aggregate Valid Measurements
+# Task 3: Aggregate Valid Measurements
 
 ## 1) Code Review Findings
 ### Critical bugs
